@@ -9,8 +9,8 @@
 
 {% block body %}
     {% trans full_name=sender_full_name, project=membership.project %}
-    <h2>You have been invited to Taiga!</h2>
-<p>Hi! {{ full_name }} has sent you an invitation to join project <em>{{ project }}</em> in Taiga.</br> Taiga is a Free, open Source Agile Project Management Tool.</p>
+    <h2>You have been invited to ThreeFold Circles!</h2>
+<p>Hi! {{ full_name }} has sent you an invitation to join project <em>{{ project }}</em> in ThreeFold Circles.</br> ThreeFold Circles is a Free, open Source Agile Project Management Tool.</p>
     {% endtrans %}
 
     {% if membership.invitation_extra_text %}
@@ -21,6 +21,6 @@
     {% endif %}
 
     <a class="button" href="{{ resolve_front_url("invitation", membership.token) }}"
-       title="{{ _("Accept your invitation to Taiga") }}">{{ _("Accept your invitation") }}</a>
-    <p><small>{{ _("The Taiga Team") }}</small></p>
+       title="{{ _("Accept your invitation to ThreeFold Circles") }}">{{ _("Accept your invitation") }}</a>
+    <p><small>{{ _("The ThreeFold Circles Team") }}</small></p>
 {% endblock %}

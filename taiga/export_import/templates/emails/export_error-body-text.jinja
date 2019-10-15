@@ -1,4 +1,4 @@
-{% trans user=user.get_full_name(), error_message=error_message, support_email=sr("support.email"), project=project.name %}
+{% trans user=user.get_full_name(), error_message=error_message, support_url=sr("support.url"), project=project.name %}
 Hello {{ user }},
 
 {{ error_message }}
@@ -6,7 +6,7 @@ Your project {{ project }} has not been exported correctly.
 
 The ThreeFold Circles system administrators have been informed.
 
-Please, try it again or contact with the support team at {{ support_email }}
+Please, try it again or contact with the support team at {{ support_url }}
 
 ---
 The ThreeFold Circles Team

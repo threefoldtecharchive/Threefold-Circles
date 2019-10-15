@@ -394,8 +394,8 @@
                                             <td valign="top" class="headerContent">
                                                 <img src="{{ static("emails/top-bg-update.png") }}" />
                                                 <a href="{{ resolve_front_url("home") }}"
-                                                   title="Taiga">
-                                                    <img src="{{ static("emails/logo-color.png") }}" id="headerImage" alt="Taiga" />
+                                                   title="ThreeFold Circles">
+                                                    <img src="{{ static("emails/logo-color.png") }}" id="headerImage" alt="ThreeFold Circles" />
                                                 </a>
                                                 {% block head %}
                                                 {% endblock %}
@@ -441,7 +441,7 @@
                                             <td valign="top" class="social-links">
                                                 <a href="{{ sr("social.twitter_url") }}" title="{{ _("Follow us on Twitter") }}" style="color: #9dce0a">{{ _("Twitter") }}</a>
                                                 <a href="{{ sr("social.github_url") }}" title="{{ _("Get the code on GitHub") }}" style="color: #9dce0a">{{ _("GitHub") }}</a>
-                                                <a href="{{ sr("taigaio_url") }}" title="{{ _("Visit our website") }}" style="color: #9dce0a">{{ _("Taiga.io") }}</a>
+                                                <a href="{{ sr("taigaio_url") }}" title="{{ _("Visit our website") }}" style="color: #9dce0a">{{ _("Threefold.io") }}</a>
                                             </td>
                                         </tr>
                                         {% endblock %}
@@ -456,22 +456,12 @@
                                         <tr>
                                             <td valign="top" class="footerContent">
                                                 {% block footer %}
-                                                    {% trans unsubscribe_url=resolve_front_url("settings-mail-notifications"), support_url=sr("support.url"), support_email=sr("support.email"), mailing_list_url=sr("support.mailing_list") %}
+                                                    {% trans unsubscribe_url=resolve_front_url("settings-mail-notifications"), support_url=sr("support.url") %}
                                                     <strong>Configure email notifications or unsubscribe:</strong>
                                                     <a href="{{ unsubscribe_url }}" title="Unsubscribe" style="color: #9dce0a">{{ unsubscribe_url}}</a>
                                                     <br>
-                                                    <strong>Taiga Support:</strong>
+                                                    <strong>ThreeFold Circles Support:</strong>
                                                     <a href="{{ support_url }}" title="Support page" style="color: #9dce0a">{{ support_url}}</a>
-                                                    <br>
-                                                    <strong>Contact us:</strong>
-                                                     <a href="mailto:{{ support_email }}" title="Support email" style="color: #9dce0a">
-                                                        {{ support_email }}
-                                                    </a>
-                                                    <br>
-                                                    <strong>Mailing list:</strong>
-                                                    <a href="{{ mailing_list_url }}" title="Mailing list" style="color: #9dce0a">
-                                                        {{ mailing_list_url }}
-                                                    </a>
                                                     {% endtrans %}
                                                 {% endblock %}
                                             </td>

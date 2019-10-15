@@ -3290,25 +3290,25 @@ msgstr ""
 "        "
 
 #: taiga/projects/templates/emails/membership_invitation-body-html.jinja:24
-msgid "Accept your invitation to Taiga"
-msgstr "Acepta la invitació a Taiga"
+msgid "Accept your invitation to ThreeFold Circles"
+msgstr "Acepta la invitació a ThreeFold Circles"
 
 #: taiga/projects/templates/emails/membership_invitation-body-html.jinja:24
 msgid "Accept your invitation"
 msgstr "Acepta la invitació"
 
 #: taiga/projects/templates/emails/membership_invitation-body-html.jinja:25
-msgid "The Taiga Team"
-msgstr "El equip de Taiga"
+msgid "The ThreeFold Circles Team"
+msgstr "El equip de ThreeFold Circles"
 
 #: taiga/projects/templates/emails/membership_invitation-body-text.jinja:6
 #, python-format
 msgid ""
 "\n"
-"You, or someone you know, has invited you to Taiga\n"
+"You, or someone you know, has invited you to ThreeFold Circles\n"
 "\n"
 "Hi! %(full_name)s has sent you an invitation to join a project called "
-"%(project)s  which is being managed on Taiga, a Free, open Source Agile "
+"%(project)s  which is being managed on ThreeFold Circles, a Free, open Source Agile "
 "Project Management Tool.\n"
 msgstr ""
 
@@ -3330,18 +3330,18 @@ msgstr ""
 "    "
 
 #: taiga/projects/templates/emails/membership_invitation-body-text.jinja:18
-msgid "Accept your invitation to Taiga following this link:"
+msgid "Accept your invitation to ThreeFold Circles following this link:"
 msgstr ""
 
 #: taiga/projects/templates/emails/membership_invitation-body-text.jinja:20
 msgid ""
 "\n"
 "---\n"
-"The Taiga Team\n"
+"The ThreeFold Circles Team\n"
 msgstr ""
 "\n"
 "---\n"
-"El equip de Taiga\n"
+"El equip de ThreeFold Circles\n"
 
 #: taiga/projects/templates/emails/membership_invitation-subject.jinja:1
 #, python-format
@@ -3350,7 +3350,7 @@ msgid ""
 "[Taiga] Invitation to join to the project '%(project)s'\n"
 msgstr ""
 "\n"
-"[Taiga] Invitació de Taiga per al projecte '%(project)s'\n"
+"[Taiga] Invitació de ThreeFold Circles per al projecte '%(project)s'\n"
 
 #: taiga/projects/templates/emails/membership_notification-body-html.jinja:4
 #, python-format
@@ -3361,7 +3361,7 @@ msgid ""
 "%(project)s</p>\n"
 "    <a class=\"button\" href=\"%(url)s\" title=\"Go to%(project)s\">Go to "
 "project</a>\n"
-"    <p><small>The Taiga Team</small></p>\n"
+"    <p><small>The ThreeFold Circles Team</small></p>\n"
 "    "
 msgstr ""
 
@@ -3433,7 +3433,7 @@ msgstr ""
 #: taiga/projects/templates/emails/transfer_start-body-text.jinja:18
 msgid ""
 "\n"
-"The Taiga Team\n"
+"The ThreeFold Circles Team\n"
 msgstr ""
 
 #: taiga/projects/templates/emails/transfer_accept-subject.jinja:1
@@ -4201,7 +4201,7 @@ msgid ""
 "    <a class=\"button\" href=\"%(url)s\" title=\"Confirm email\">Confirm "
 "email</a>\n"
 "    <p>You can ignore this message if you did not request.</p>\n"
-"    <p><small>The Taiga Team</small></p>\n"
+"    <p><small>The ThreeFold Circles Team</small></p>\n"
 "    "
 msgstr ""
 
@@ -4216,7 +4216,7 @@ msgid ""
 "You can ignore this message if you did not request.\n"
 "\n"
 "---\n"
-"The Taiga Team\n"
+"The ThreeFold Circles Team\n"
 msgstr ""
 
 #: taiga/users/templates/emails/change_email-subject.jinja:1
@@ -4232,7 +4232,7 @@ msgid ""
 "    <a class=\"button\" href=\"%(url)s\" title=\"Recover your password"
 "\">Recover your password</a>\n"
 "    <p>You can ignore this message if you did not request.</p>\n"
-"    <p><small>The Taiga Team</small></p>\n"
+"    <p><small>The ThreeFold Circles Team</small></p>\n"
 "    "
 msgstr ""
 
@@ -4247,7 +4247,7 @@ msgid ""
 "You can ignore this message if you did not request.\n"
 "\n"
 "---\n"
-"The Taiga Team\n"
+"The ThreeFold Circles Team\n"
 msgstr ""
 
 #: taiga/users/templates/emails/password_recovery-subject.jinja:1
@@ -4258,14 +4258,14 @@ msgstr ""
 msgid ""
 "\n"
 "        <td>\n"
-"            <h2>Thank you for registering in Taiga</h2>\n"
+"            <h2>Thank you for registering in ThreeFold Circles</h2>\n"
 "            <h3>We hope you enjoy it</h3>\n"
-"            <p>We built Taiga because we wanted the project management tool "
+"            <p>We built ThreeFold Circles because we wanted the project management tool "
 "that sits open on our computers all day long, to serve as a continued "
 "reminder of why we love to collaborate, code and design.</p>\n"
 "            <p>We built it to be beautiful, elegant, simple to use and fun - "
 "without forsaking flexibility and power.</p>\n"
-"            <small>The taiga Team</small>\n"
+"            <small>The ThreeFold Circles Team</small>\n"
 "        </td>\n"
 "        "
 msgstr ""
@@ -4283,11 +4283,11 @@ msgstr ""
 #: taiga/users/templates/emails/registered_user-body-text.jinja:1
 msgid ""
 "\n"
-"Thank you for registering in Taiga\n"
+"Thank you for registering in ThreeFold Circles\n"
 "\n"
 "We hope you enjoy it\n"
 "\n"
-"We built Taiga because we wanted the project management tool that sits open "
+"We built ThreeFold Circles because we wanted the project management tool that sits open "
 "on our computers all day long, to serve as a continued reminder of why we "
 "love to collaborate, code and design.\n"
 "\n"
@@ -4295,7 +4295,7 @@ msgid ""
 "forsaking flexibility and power.\n"
 "\n"
 "--\n"
-"The taiga Team\n"
+"The ThreeFold Circles Team\n"
 msgstr ""
 
 #: taiga/users/templates/emails/registered_user-body-text.jinja:13
@@ -4306,7 +4306,7 @@ msgid ""
 msgstr ""
 
 #: taiga/users/templates/emails/registered_user-subject.jinja:1
-msgid "You've been Taigatized!"
+msgid "You've been in ThreeFold Circles!"
 msgstr ""
 
 #: taiga/users/validators.py:45
