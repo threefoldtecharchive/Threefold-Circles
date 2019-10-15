@@ -24,7 +24,7 @@ SR = {
         "github_url": "https://github.com/threefoldtech/",
     },
     "support": {
-        "url": "https://support.grid.tf",
+        "url": "support.grid.tf",
         # "email": "support@taiga.io",
         # "mailing_list": "https://groups.google.com/forum/#!forum/taigaio",
     }
