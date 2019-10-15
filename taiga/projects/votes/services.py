@@ -36,7 +36,7 @@ def add_vote(obj, user):
     idempotent.
 
     :param obj: Any Django model instance.
-    :param user: User adding the vote. :class:`~taiga.users.models.User` instance.
+    :param user: User adding the vote. :class:`~ThreeFold Circles.users.models.User` instance.
     """
     obj_type = apps.get_model("contenttypes", "ContentType").objects.get_for_model(obj)
     with advisory_lock("vote-{}-{}".format(obj_type.id, obj.id)):
@@ -58,7 +58,7 @@ def remove_vote(obj, user):
     idempotent.
 
     :param obj: Any Django model instance.
-    :param user: User removing her vote. :class:`~taiga.users.models.User` instance.
+    :param user: User removing her vote. :class:`~ThreeFold Circles.users.models.User` instance.
     """
     obj_type = apps.get_model("contenttypes", "ContentType").objects.get_for_model(obj)
     with advisory_lock("vote-{}-{}".format(obj_type.id, obj.id)):
@@ -102,7 +102,7 @@ def get_votes(obj):
 def get_voted(user_or_id, model):
     """Get the objects voted by an user.
 
-    :param user_or_id: :class:`~taiga.users.models.User` instance or id.
+    :param user_or_id: :class:`~ThreeFold Circles.users.models.User` instance or id.
     :param model: Show only objects of this kind. Can be any Django model class.
 
     :return: Queryset of objects representing the votes of the user.

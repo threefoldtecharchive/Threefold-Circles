@@ -285,7 +285,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         with advisory_lock("delete-user"):
             deleted_user_prefix = "deleted-user-{}".format(timestamp_ms())
             self.username = slugify_uniquely(deleted_user_prefix, User, slugfield="username")
-            self.email = "{}@taiga.io".format(self.username)
+            self.email = "{}@threefold.io".format(self.username)
             self.is_active = False
             self.full_name = "Deleted user"
             self.color = ""

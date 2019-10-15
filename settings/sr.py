@@ -21,7 +21,7 @@ SR = {
     "taigaio_url": "https://threefold.io",
     "social": {
         "twitter_url": "https://twitter.com/threefold_fdn",
-        "github_url": "https://github.com/threefoldfoundation/www_threefold.io_new",
+        "github_url": "https://github.com/threefoldtech/",
     },
     "support": {
         "url": "https://support.grid.tf",
