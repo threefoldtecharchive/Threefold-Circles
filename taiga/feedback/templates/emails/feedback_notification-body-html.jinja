@@ -3,7 +3,7 @@
 {% block body %}
     {% trans full_name=feedback_entry.full_name, email=feedback_entry.email %}
     <h1>Feedback</h1>
-    <p>Taiga has received feedback from {{ full_name }} <{{ email }}></p>
+    <p>Threefold has received feedback from {{ full_name }} <{{ email }}></p>
     {% endtrans %}
 
     {% trans comment=feedback_entry.comment|linebreaksbr %}
