@@ -1,6 +1,6 @@
 {% trans owner_name=project.owner.get_full_name(), rejecter_name=rejecter.get_full_name(), project_name=project.name %}
 Hi {{owner_name}},
-{{ rejecter_name}} has declined your offer and will not become the new project owner for "{{project_name}}".
+{{ rejecter_name}} has declined your offer and will not become the new circle owner for "{{project_name}}".
 {% endtrans %}
 
 {% if reason %}
@@ -9,7 +9,7 @@ Hi {{owner_name}},
 {% endif %}
 
 {% trans %}
-If you want, you can still try to transfer the project ownership to a different person.
+If you want, you can still try to transfer the circle ownership to a different person.
 {% endtrans %}
 
 {% trans %}Request transfer to a different person:{% endtrans %}
