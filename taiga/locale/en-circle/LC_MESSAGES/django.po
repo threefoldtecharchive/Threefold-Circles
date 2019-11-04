@@ -1676,12 +1676,12 @@ msgid "Delete wiki link"
 msgstr "Delete wiki link"
 
 #: taiga/permissions/choices.py:78
-msgid "Modify project"
-msgstr "Modify project"
+msgid "Modify circle"
+msgstr "Modify circle"
 
 #: taiga/permissions/choices.py:79
-msgid "Delete project"
-msgstr "Delete project"
+msgid "Delete circle"
+msgstr "Delete circle"
 
 #: taiga/permissions/choices.py:80
 msgid "Add member"
@@ -1776,8 +1776,8 @@ msgid "The user doesn't exist"
 msgstr "The user doesn't exist"
 
 #: taiga/projects/api.py:422
-msgid "The user must be already a project member"
-msgstr "The user must be already a project member"
+msgid "The user must be already a circle member"
+msgstr "The user must be already a circle member"
 
 #: taiga/projects/api.py:662
 msgid "You can't delete story due date by default"
@@ -1832,8 +1832,8 @@ msgid "Object id issue isn't exists"
 msgstr "Object id issue isn't exists"
 
 #: taiga/projects/attachments/api.py:72
-msgid "Circle ID not matches between object and project"
-msgstr "Circle ID not matches between object and project"
+msgid "Circle ID not matches between object and circle"
+msgstr "Circle ID not matches between object and circle"
 
 #: taiga/projects/attachments/models.py:41 taiga/projects/contact/models.py:29
 #: taiga/projects/custom_attributes/models.py:43
@@ -1981,14 +1981,14 @@ msgid ""
 "\n"
 "You are receiving this message because you are listed as administrator of "
 "the circle titled %(project_name)s. If you don't want members of the Threefold "
-"community contacting your project, please update your circle settings in "
+"community contacting your circle, please update your circle settings in "
 "%(project_settings_url)s to prevent such contacts. Regular communications "
 "amongst members of the circle will not be affected.\n"
 msgstr ""
 "\n"
 "You are receiving this message because you are listed as administrator of "
 "the circle titled %(project_name)s. If you don't want members of the Threefold "
-"community contacting your project, please update your circle settings in "
+"community contacting your circle, please update your circle settings in "
 "%(project_settings_url)s to prevent such contacts. Regular communications "
 "amongst members of the circle will not be affected.\n"
 
@@ -2325,12 +2325,12 @@ msgstr "finished date"
 #: taiga/projects/issues/validators.py:68
 #: taiga/projects/tasks/validators.py:176
 #: taiga/projects/userstories/validators.py:158
-msgid "The milestone isn't valid for the project"
-msgstr "The milestone isn't valid for the project"
+msgid "The milestone isn't valid for the circle"
+msgstr "The milestone isn't valid for the circle"
 
 #: taiga/projects/issues/validators.py:78
-msgid "All the issues must be from the same project"
-msgstr "All the issues must be from the same project"
+msgid "All the issues must be from the same circle"
+msgstr "All the issues must be from the same circle"
 
 #: taiga/projects/likes/models.py:36
 msgid "Like"
@@ -2401,8 +2401,8 @@ msgid "'circle' parameter is mandatory"
 msgstr "'circle' parameter is mandatory"
 
 #: taiga/projects/mixins/validators.py:19
-msgid "The user must be a project member."
-msgstr "The user must be a project member."
+msgid "The user must be a circle member."
+msgstr "The user must be a circle member."
 
 #: taiga/projects/models.py:79
 msgid "email"
@@ -2733,8 +2733,8 @@ msgstr "Watched"
 #: taiga/projects/notifications/services.py:99
 #: taiga/projects/settings/services.py:49
 #: taiga/projects/settings/services.py:67
-msgid "Notify exists for specified user and project"
-msgstr "Notify exists for specified user and project"
+msgid "Notify exists for specified user and circle"
+msgstr "Notify exists for specified user and circle"
 
 #: taiga/projects/notifications/services.py:491
 msgid "Invalid value for notify level"
