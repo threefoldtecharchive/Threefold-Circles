@@ -1,6 +1,6 @@
 {% trans owner_name=project.owner.get_full_name(), receiver_name=receiver.get_full_name(), project_name=project.name %}
 Hi {{receiver_name}},
-{{ owner_name }}, the current project owner at "{{project_name}}" would like you to become the new project owner.
+{{ owner_name }}, the current circle owner at "{{project_name}}" would like you to become the new circle owner.
 {% endtrans %}
 
 {% if reason %}{% trans  owner_name=project.owner.get_full_name() %}{{ owner_name }} says:{% endtrans %}
@@ -16,5 +16,5 @@ Please, go to the following link to either accept or reject this proposal.</p>
 
 ---
 {% trans %}
-The Taiga Team
+The Threefold Team
 {% endtrans %}
