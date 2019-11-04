@@ -85,6 +85,7 @@ LANGUAGES = [
     ("de", "Deutsch"),  # German
     #("el", "Ελληνικά"),  # Greek
     ("en", "English (US)"),  # English
+    ("en-circle", "English(US)"), # English with TF circle terminology
     #("en-au", "English (Australia)"),  # Australian English
     #("en-gb", "English (UK)"),  # British English
     #("eo", "esperanta"),  # Esperanto
