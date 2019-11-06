@@ -539,7 +539,7 @@ msgid "Story deleted"
 msgstr ""
 
 #: taiga/events/events.py:124
-msgid "US #{} - {}"
+msgid "Story #{} - {}"
 msgstr ""
 
 #: taiga/events/events.py:127
@@ -3342,10 +3342,10 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"[%(project)s] Updated the US #%(ref)s \"%(subject)s\"\n"
+"[%(project)s] Updated the story #%(ref)s \"%(subject)s\"\n"
 msgstr ""
 "\n"
-"[%(project)s] Updated the US #%(ref)s \"%(subject)s\"\n"
+"[%(project)s] Updated the story #%(ref)s \"%(subject)s\"\n"
 
 #: taiga/projects/notifications/templates/emails/userstories/userstory-create-body-html.jinja:4
 #, python-format
@@ -3393,10 +3393,10 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"[%(project)s] Created the US #%(ref)s \"%(subject)s\"\n"
+"[%(project)s] Created the story #%(ref)s \"%(subject)s\"\n"
 msgstr ""
 "\n"
-"[%(project)s] Created the US #%(ref)s \"%(subject)s\"\n"
+"[%(project)s] Created the story #%(ref)s \"%(subject)s\"\n"
 
 #: taiga/projects/notifications/templates/emails/userstories/userstory-delete-body-html.jinja:4
 #, python-format
@@ -3440,10 +3440,10 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"[%(project)s] Deleted the US #%(ref)s \"%(subject)s\"\n"
+"[%(project)s] Deleted the story #%(ref)s \"%(subject)s\"\n"
 msgstr ""
 "\n"
-"[%(project)s] Deleted the US #%(ref)s \"%(subject)s\"\n"
+"[%(project)s] Deleted the story #%(ref)s \"%(subject)s\"\n"
 
 #: taiga/projects/notifications/templates/emails/wiki/wikipage-change-body-html.jinja:4
 #, python-format
