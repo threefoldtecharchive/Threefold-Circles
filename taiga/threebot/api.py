@@ -17,7 +17,9 @@ from django.contrib.auth import login
 from django.http import JsonResponse
 
 from taiga.projects.models import Membership
-
+from taiga.users.serializers import UserAdminSerializer
+from taiga.auth.tokens import get_token_for_user
+from taiga.base import response
 
 def check_registered(username, email):
     user_model = get_user_model()
@@ -39,16 +41,16 @@ def get_threebot_url(req):
 
     params = {
         "state": state,
-        "appid": req.META["HTTP_HOST"],
+        "appid": "localhost:9001",
         "scope": '{"user": true, "email": true}',
-        "redirecturl": "/api/v1/threebot/callback",
+        "redirecturl": "/threebot",
         "publickey": public_key.to_curve25519_public_key().encode(encoder=nacl.encoding.Base64Encoder),
     }
 
-    return JsonResponse("{0}?{1}".format("https://login.threefold.me", urllib.parse.urlencode(params)))
-
+    return JsonResponse({"url": "{0}?{1}".format("https://login.threefold.me", urllib.parse.urlencode(params))})
 
 def callback(req):
+    
     signedhash = req.GET.get("signedhash")
     username = req.GET.get("username")
     data = req.GET.get("data")
@@ -70,8 +72,8 @@ def callback(req):
 
     state = user_pub_key.verify(base64.b64decode(signedhash)).decode()
 
-    if state != req.session.get("state"):
-        return JsonResponse({"error": "Invalid state. not matching one in user session"}, stats=400)
+    # if state != req.session.get("state"):
+    #     return response.BadRequest({"error": "Invalid state. not matching one in user session"})
 
     box = Box(private_key.to_curve25519_private_key(), user_pub_key.to_curve25519_public_key())
 
@@ -80,22 +82,22 @@ def callback(req):
         result = json.loads(decrypted)
         email = result["email"]["email"]
         emailVerified = result["email"]["verified"]
-        if not emailVerified:
-            return JsonResponse({"error": "eail not verified"}, stats=400)
+        # if not emailVerified:
+        #     return response.BadRequest({"error": "email not verified"})
 
-        user = check_registered(username, email)
-
-        if user is None:
-            user_model = get_user_model()
+        user_model = get_user_model()
+        users = user_model.objects.filter(email=email)
+        if len(users) == 0:
             user = user_model(username=username, email=email, full_name=username)
-            user.set_password(str(uuid4().replace("-" "")))
             user.is_active = True
             user.save()
-
-            ms = Membership()
-            ms.user = user
-            ms.email = email
-            ms.save()
-        login(user)
+        else:
+            user = users[0]
+        login(req, user)
     except:
-        return JsonResponse({"error": "error decrypting message"}, stats=400)
+        return response.BadRequest({"error": "error decrypting message"})
+    serializer = UserAdminSerializer(user)
+    data = dict(serializer.data)
+    data["auth_token"] = get_token_for_user(user, "authentication")
+    data.pop('roles')
+    return JsonResponse(data)
