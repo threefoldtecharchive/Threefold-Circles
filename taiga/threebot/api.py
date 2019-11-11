@@ -41,7 +41,7 @@ def get_threebot_url(req):
 
     params = {
         "state": state,
-        "appid": "localhost:9001",
+        "appid": settings.SITES["front"]["domain"],
         "scope": '{"user": true, "email": true}',
         "redirecturl": "/threebot",
         "publickey": public_key.to_curve25519_public_key().encode(encoder=nacl.encoding.Base64Encoder),
@@ -88,6 +88,7 @@ def callback(req):
         user_model = get_user_model()
         users = user_model.objects.filter(email=email)
         if len(users) == 0:
+            username = username.replace('.3bot', '')
             user = user_model(username=username, email=email, full_name=username)
             user.is_active = True
             user.save()
