@@ -690,7 +690,7 @@ def test_api_create_bulk_members_max_pending_memberships(client, settings):
     data = {
         "project_id": project.id,
         "bulk_memberships": [
-            {"role_id": tester.id, "username": "testing@taiga.io"},
+            {"role_id": tester.id, "username": "testing@threefoldcircles.io"},
         ]
     }
     client.login(john)

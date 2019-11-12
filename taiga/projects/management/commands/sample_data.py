@@ -98,10 +98,9 @@ SUBJECT_CHOICES = [
     "Migrate to Python 3 and milk a beautiful cow"]
 
 URL_CHOICES = [
-    "https://taiga.io",
-    "https://blog.taiga.io",
-    "https://tree.taiga.io",
-    "https://tribe.taiga.io"]
+    "https://threefold.io",
+    "https://threefoldcircles.io",
+    "https://http://support.grid.tf"]
 
 BASE_USERS = getattr(settings, "SAMPLE_DATA_BASE_USERS", {})
 NUM_USERS = getattr(settings, "SAMPLE_DATA_NUM_USERS", 10)

@@ -522,7 +522,7 @@ TAGS_PREDEFINED_COLORS = ["#fce94f", "#edd400", "#c4a000", "#8ae234",
 
 # Feedback module settings
 FEEDBACK_ENABLED = True
-FEEDBACK_EMAIL = "support@taiga.io"
+FEEDBACK_EMAIL = "http://support.grid.tf"
 
 # Stats module settings
 STATS_ENABLED = False
