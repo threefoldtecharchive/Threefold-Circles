@@ -539,23 +539,23 @@ msgid "Story deleted"
 msgstr ""
 
 #: taiga/events/events.py:124
-msgid "US #{} - {}"
+msgid "Story #{} - {}"
 msgstr ""
 
 #: taiga/events/events.py:127
-msgid "Task created"
+msgid "Item created"
 msgstr ""
 
 #: taiga/events/events.py:130
-msgid "Task changed"
+msgid "Item changed"
 msgstr ""
 
 #: taiga/events/events.py:133
-msgid "Task deleted"
+msgid "Item deleted"
 msgstr ""
 
 #: taiga/events/events.py:135
-msgid "Task #{} - {}"
+msgid "Item #{} - {}"
 msgstr ""
 
 #: taiga/events/events.py:138
@@ -660,8 +660,8 @@ msgid "error importing epics"
 msgstr "error importing epics"
 
 #: taiga/export_import/services/store.py:831
-msgid "error importing tasks"
-msgstr "error importing tasks"
+msgid "error importing items"
+msgstr "error importing items"
 
 #: taiga/export_import/services/store.py:838
 msgid "error importing wiki pages"
@@ -1338,7 +1338,7 @@ msgid ""
 "%(url)s\n"
 "\n"
 "---\n"
-"The Taiga Team\n"
+"The Threefold Team\n"
 msgstr ""
 "\n"
 "Hello %(user)s,\n"
@@ -1350,7 +1350,7 @@ msgstr ""
 "%(url)s\n"
 "\n"
 "---\n"
-"The Taiga Team\n"
+"The Threefold Team\n"
 
 #: taiga/importers/templates/emails/asana_import_success-subject.jinja:1
 #, python-format
@@ -1792,7 +1792,7 @@ msgid "You can't delete item due date by default"
 msgstr ""
 
 #: taiga/projects/api.py:754
-msgid "Circle already have task due dates"
+msgid "Circle already have item due dates"
 msgstr ""
 
 #: taiga/projects/api.py:878
@@ -2815,7 +2815,7 @@ msgid ""
 "See epic #%(ref)s %(subject)s at %(url)s\n"
 "\n"
 "---\n"
-"The Taiga Team\n"
+"The Threefold Team\n"
 msgstr ""
 "\n"
 "New epic created\n"
@@ -2823,7 +2823,7 @@ msgstr ""
 "See epic #%(ref)s %(subject)s at %(url)s\n"
 "\n"
 "---\n"
-"The Taiga Team\n"
+"The Threefold Team\n"
 
 #: taiga/projects/notifications/templates/emails/epics/epic-create-subject.jinja:1
 #, python-format
@@ -2870,7 +2870,7 @@ msgstr ""
 "Epic #%(ref)s %(subject)s\n"
 "\n"
 "---\n"
-"The Taiga Team\n"
+"The Threefold Team\n"
 
 #: taiga/projects/notifications/templates/emails/epics/epic-delete-subject.jinja:1
 #, python-format
@@ -2934,7 +2934,7 @@ msgid ""
 "    <p>Issue #%(ref)s %(subject)s</p>\n"
 "    <a class=\"button\" href=\"%(url)s\" title=\"See Issue #%(ref)s "
 "%(subject)s\">See issue</a>\n"
-"    <p><small>The Taiga Team</small></p>\n"
+"    <p><small>The Threefold Team</small></p>\n"
 "    "
 msgstr ""
 "\n"
@@ -2944,7 +2944,7 @@ msgstr ""
 "    <p>Issue #%(ref)s %(subject)s</p>\n"
 "    <a class=\"button\" href=\"%(url)s\" title=\"See Issue #%(ref)s "
 "%(subject)s\">See issue</a>\n"
-"    <p><small>The Taiga Team</small></p>\n"
+"    <p><small>The Threefold Team</small></p>\n"
 "    "
 
 #: taiga/projects/notifications/templates/emails/issues/issue-create-body-text.jinja:1
@@ -3167,35 +3167,35 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"    <h1>Task updated</h1>\n"
-"    <p>Hello %(user)s, <br> %(changer)s has updated a task on %(project)s</"
+"    <h1>Checklist item updated</h1>\n"
+"    <p>Hello %(user)s, <br> %(changer)s has updated a checklist item on %(project)s</"
 "p>\n"
 "    <p>Task #%(ref)s %(subject)s</p>\n"
-"    <a class=\"button\" href=\"%(url)s\" title=\"See Task #%(ref)s: "
+"    <a class=\"button\" href=\"%(url)s\" title=\"See checklist item #%(ref)s: "
 "%(subject)s in Taiga\">See task</a>\n"
 "    "
 msgstr ""
 "\n"
 "    <h1>Task updated</h1>\n"
-"    <p>Hello %(user)s, <br> %(changer)s has updated a task on %(project)s</"
+"    <p>Hello %(user)s, <br> %(changer)s has updated a checklist item on %(project)s</"
 "p>\n"
-"    <p>Task #%(ref)s %(subject)s</p>\n"
-"    <a class=\"button\" href=\"%(url)s\" title=\"See Task #%(ref)s: "
-"%(subject)s in Threefold Circles Cockpit\">See task</a>\n"
+"    <p>Checklist item #%(ref)s %(subject)s</p>\n"
+"    <a class=\"button\" href=\"%(url)s\" title=\"See Checklist item #%(ref)s: "
+"%(subject)s in Threefold Circles Cockpit\">See checklist item </a>\n"
 "    "
 
 #: taiga/projects/notifications/templates/emails/tasks/task-change-body-text.jinja:3
 #, python-format
 msgid ""
 "\n"
-"Task updated\n"
+"Checklist item updated\n"
 "Hello %(user)s, %(changer)s has updated an item on %(project)s\n"
-"See task #%(ref)s %(subject)s at %(url)s\n"
+"See checklist item #%(ref)s %(subject)s at %(url)s\n"
 msgstr ""
 "\n"
-"Task updated\n"
-"Hello %(user)s, %(changer)s has updated an item on %(project)s\n"
-"See task #%(ref)s %(subject)s at %(url)s\n"
+"Checklist item updated\n"
+"Hello %(user)s, %(changer)s has updated a checklist item on %(project)s\n"
+"See checklist item #%(ref)s %(subject)s at %(url)s\n"
 
 #: taiga/projects/notifications/templates/emails/tasks/task-change-subject.jinja:1
 #, python-format
@@ -3214,18 +3214,18 @@ msgid ""
 "    <p>Hello %(user)s,<br />%(changer)s has created a new item on "
 "%(project)s</p>\n"
 "    <p>Task #%(ref)s %(subject)s</p>\n"
-"    <a class=\"button\" href=\"%(url)s\" title=\"See Task #%(ref)s "
-"%(subject)s\">See task</a>\n"
+"    <a class=\"button\" href=\"%(url)s\" title=\"See Checklist Item #%(ref)s "
+"%(subject)s\">See checklist item </a>\n"
 "    <p><small>The Threefold Team</small></p>\n"
 "    "
 msgstr ""
 "\n"
-"    <h1>New task created</h1>\n"
+"    <h1>New checklist item created</h1>\n"
 "    <p>Hello %(user)s,<br />%(changer)s has created a new item on "
 "%(project)s</p>\n"
-"    <p>Task #%(ref)s %(subject)s</p>\n"
+"    <p>Checklist item #%(ref)s %(subject)s</p>\n"
 "    <a class=\"button\" href=\"%(url)s\" title=\"See Item #%(ref)s "
-"%(subject)s\">See task</a>\n"
+"%(subject)s\">See checklist item </a>\n"
 "    <p><small>The Threefold Team</small></p>\n"
 "    "
 
@@ -3233,17 +3233,17 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"New task created\n"
+"New checklist item created\n"
 "Hello %(user)s, %(changer)s has created a new item on %(project)s\n"
-"See task #%(ref)s %(subject)s at %(url)s\n"
+"See checklist item #%(ref)s %(subject)s at %(url)s\n"
 "\n"
 "---\n"
 "The Threefold Team\n"
 msgstr ""
 "\n"
-"New task created\n"
+"New checklist item created\n"
 "Hello %(user)s, %(changer)s has created a new item on %(project)s\n"
-"See task #%(ref)s %(subject)s at %(url)s\n"
+"See item #%(ref)s %(subject)s at %(url)s\n"
 "\n"
 "---\n"
 "The Threefold Team\n"
@@ -3261,18 +3261,18 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"    <h1>Task deleted</h1>\n"
-"    <p>Hello %(user)s,<br />%(changer)s has deleted a task on %(project)s</"
+"    <h1>Checklist Item deleted</h1>\n"
+"    <p>Hello %(user)s,<br />%(changer)s has deleted a checklist item on %(project)s</"
 "p>\n"
-"    <p>Task #%(ref)s %(subject)s</p>\n"
+"    <p>Checklist Item #%(ref)s %(subject)s</p>\n"
 "    <p><small>The Threefold Team</small></p>\n"
 "    "
 msgstr ""
 "\n"
-"    <h1>Task deleted</h1>\n"
-"    <p>Hello %(user)s,<br />%(changer)s has deleted a task on %(project)s</"
+"    <h1>Checklist Item deleted</h1>\n"
+"    <p>Hello %(user)s,<br />%(changer)s has deleted a checklist item on %(project)s</"
 "p>\n"
-"    <p>Task #%(ref)s %(subject)s</p>\n"
+"    <p>Checklist item #%(ref)s %(subject)s</p>\n"
 "    <p><small>The Threefold Team</small></p>\n"
 "    "
 
@@ -3280,17 +3280,17 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"Task deleted\n"
+"Checklist Item deleted\n"
 "Hello %(user)s, %(changer)s has deleted an item on %(project)s\n"
-"Task #%(ref)s %(subject)s\n"
+"Checklist Item #%(ref)s %(subject)s\n"
 "\n"
 "---\n"
 "The Threefold Team\n"
 msgstr ""
 "\n"
-"Task deleted\n"
+"Checklist Item deleted\n"
 "Hello %(user)s, %(changer)s has deleted an item on %(project)s\n"
-"Task #%(ref)s %(subject)s\n"
+"Checklist Item #%(ref)s %(subject)s\n"
 "\n"
 "---\n"
 "The Threefold Team\n"
@@ -3342,17 +3342,17 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"[%(project)s] Updated the US #%(ref)s \"%(subject)s\"\n"
+"[%(project)s] Updated the story #%(ref)s \"%(subject)s\"\n"
 msgstr ""
 "\n"
-"[%(project)s] Updated the US #%(ref)s \"%(subject)s\"\n"
+"[%(project)s] Updated the story #%(ref)s \"%(subject)s\"\n"
 
 #: taiga/projects/notifications/templates/emails/userstories/userstory-create-body-html.jinja:4
 #, python-format
 msgid ""
 "\n"
-"    <h1>New user story created</h1>\n"
-"    <p>Hello %(user)s,<br />%(changer)s has created a new user story on "
+"    <h1>New story created</h1>\n"
+"    <p>Hello %(user)s,<br />%(changer)s has created a new story on "
 "%(project)s</p>\n"
 "    <p>Story #%(ref)s %(subject)s</p>\n"
 "    <a class=\"button\" href=\"%(url)s\" title=\"See Story #%(ref)s "
@@ -3393,10 +3393,10 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"[%(project)s] Created the US #%(ref)s \"%(subject)s\"\n"
+"[%(project)s] Created the story #%(ref)s \"%(subject)s\"\n"
 msgstr ""
 "\n"
-"[%(project)s] Created the US #%(ref)s \"%(subject)s\"\n"
+"[%(project)s] Created the story #%(ref)s \"%(subject)s\"\n"
 
 #: taiga/projects/notifications/templates/emails/userstories/userstory-delete-body-html.jinja:4
 #, python-format
@@ -3440,10 +3440,10 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"[%(project)s] Deleted the US #%(ref)s \"%(subject)s\"\n"
+"[%(project)s] Deleted the story #%(ref)s \"%(subject)s\"\n"
 msgstr ""
 "\n"
-"[%(project)s] Deleted the US #%(ref)s \"%(subject)s\"\n"
+"[%(project)s] Deleted the story #%(ref)s \"%(subject)s\"\n"
 
 #: taiga/projects/notifications/templates/emails/wiki/wikipage-change-body-html.jinja:4
 #, python-format
@@ -3453,7 +3453,7 @@ msgid ""
 "    <p>Hello %(user)s, <br> %(changer)s has updated a wiki page on "
 "%(project)s</p>\n"
 "    <p>Wiki page %(page)s</p>\n"
-"    <a class=\"button\" href=\"%(url)s\" title=\"See wiki page in Threefold Circles"
+"    <a class=\"button\" href=\"%(url)s\" title=\"See wiki page"
 "\">See Wiki Page</a>\n"
 "    "
 msgstr ""
@@ -3462,7 +3462,7 @@ msgstr ""
 "    <p>Hello %(user)s, <br> %(changer)s has updated a wiki page on "
 "%(project)s</p>\n"
 "    <p>Wiki page %(page)s</p>\n"
-"    <a class=\"button\" href=\"%(url)s\" title=\"See wiki page in Threefold Circles"
+"    <a class=\"button\" href=\"%(url)s\" title=\"See wiki page"
 "\">See Wiki Page</a>\n"
 "    "
 
@@ -3762,8 +3762,8 @@ msgid "You don't have permissions to set this sprint to this item."
 msgstr "You don't have permissions to set this sprint to this item."
 
 #: taiga/projects/tasks/api.py:115
-msgid "You don't have permissions to set this user story to this item."
-msgstr "You don't have permissions to set this user story to this item."
+msgid "You don't have permissions to set this story to this item."
+msgstr "You don't have permissions to set this story to this item."
 
 #: taiga/projects/tasks/api.py:118
 msgid "You don't have permissions to set this status to this item."
@@ -3774,8 +3774,8 @@ msgid "story order"
 msgstr "story order"
 
 #: taiga/projects/tasks/models.py:61
-msgid "taskboard order"
-msgstr "taskboard order"
+msgid "itemboard order"
+msgstr "itemboard order"
 
 #: taiga/projects/tasks/models.py:69
 msgid "is iocaine"
@@ -3798,8 +3798,8 @@ msgid "Invalid item status id. The status must belong to the same circle."
 msgstr "Invalid item status id. The status must belong to the same circle."
 
 #: taiga/projects/tasks/validators.py:123
-msgid "Invalid user story id. The user story must belong to the same circle."
-msgstr "Invalid user story id. The user story must belong to the same circle."
+msgid "Invalid story id. The story must belong to the same circle."
+msgstr "Invalid story id. The story must belong to the same circle."
 
 #: taiga/projects/tasks/validators.py:135
 msgid "Invalid milestone id. The milestone must belong to the same circle."
@@ -3873,15 +3873,15 @@ msgid ""
 "You, or someone you know, has invited you to Threefold Circles\n"
 "\n"
 "Hi! %(full_name)s has sent you an invitation to join a circle called "
-"%(project)s  which is being managed on Threefold Circle Cockpit, a Free, open Source Agile "
-"Circle Management Tool.\n"
+"%(project)s  which is being managed on Threefold Circle Cockpit "
+"\n"
 msgstr ""
 "\n"
 "You, or someone you know, has invited you to Threefold Circles\n"
 "\n"
 "Hi! %(full_name)s has sent you an invitation to join a circle called "
-"%(project)s  which is being managed on Threefold Circle Cockpit, a Free, open Source Agile "
-"Circles Management Tool.\n"
+"%(project)s  which is being managed on Threefold Circle Cockpit "
+"\n"
 
 #: taiga/projects/templates/emails/membership_invitation-body-text.jinja:12
 #, python-format
@@ -4312,112 +4312,112 @@ msgstr ""
 "process, from definition of a task to its delivery to the customer, is "
 "displayed for participants to see and team members pull work from a queue."
 
-#. Translators: User story point value (value = undefined)
+#. Translators: Story point value (value = undefined)
 #: taiga/projects/translations.py:45
 msgid "?"
 msgstr "?"
 
-#. Translators: User story point value (value = 0)
+#. Translators: Story point value (value = 0)
 #: taiga/projects/translations.py:47
 msgid "0"
 msgstr "0"
 
-#. Translators: User story point value (value = 0.5)
+#. Translators: Story point value (value = 0.5)
 #: taiga/projects/translations.py:49
 msgid "1/2"
 msgstr "1/2"
 
-#. Translators: User story point value (value = 1)
+#. Translators: Story point value (value = 1)
 #: taiga/projects/translations.py:51
 msgid "1"
 msgstr "1"
 
-#. Translators: User story point value (value = 2)
+#. Translators: Story point value (value = 2)
 #: taiga/projects/translations.py:53
 msgid "2"
 msgstr "2"
 
-#. Translators: User story point value (value = 3)
+#. Translators: Story point value (value = 3)
 #: taiga/projects/translations.py:55
 msgid "3"
 msgstr "3"
 
-#. Translators: User story point value (value = 5)
+#. Translators: Story point value (value = 5)
 #: taiga/projects/translations.py:57
 msgid "5"
 msgstr "5"
 
-#. Translators: User story point value (value = 8)
+#. Translators: Story point value (value = 8)
 #: taiga/projects/translations.py:59
 msgid "8"
 msgstr "8"
 
-#. Translators: User story point value (value = 10)
+#. Translators: Story point value (value = 10)
 #: taiga/projects/translations.py:61
 msgid "10"
 msgstr "10"
 
-#. Translators: User story point value (value = 13)
+#. Translators: Story point value (value = 13)
 #: taiga/projects/translations.py:63
 msgid "13"
 msgstr "13"
 
-#. Translators: User story point value (value = 20)
+#. Translators: Story point value (value = 20)
 #: taiga/projects/translations.py:65
 msgid "20"
 msgstr "20"
 
-#. Translators: User story point value (value = 40)
+#. Translators: Story point value (value = 40)
 #: taiga/projects/translations.py:67
 msgid "40"
 msgstr "40"
 
-#. Translators: User story status
-#. Translators: Task status
+#. Translators: Story status
+#. Translators: item status
 #. Translators: Issue status
 #: taiga/projects/translations.py:75 taiga/projects/translations.py:98
 #: taiga/projects/translations.py:114
 msgid "New"
 msgstr "New"
 
-#. Translators: User story status
+#. Translators: Story status
 #: taiga/projects/translations.py:78
 msgid "Ready"
 msgstr "Ready"
 
-#. Translators: User story status
-#. Translators: Task status
+#. Translators: Story status
+#. Translators: Item status
 #. Translators: Issue status
 #: taiga/projects/translations.py:81 taiga/projects/translations.py:100
 #: taiga/projects/translations.py:116
 msgid "In progress"
 msgstr "In progress"
 
-#. Translators: User story status
-#. Translators: Task status
+#. Translators: Story status
+#. Translators: Item status
 #. Translators: Issue status
 #: taiga/projects/translations.py:84 taiga/projects/translations.py:102
 #: taiga/projects/translations.py:118
 msgid "Ready for test"
 msgstr "Ready for test"
 
-#. Translators: User story status
+#. Translators: Story status
 #: taiga/projects/translations.py:87
 msgid "Done"
 msgstr "Done"
 
-#. Translators: User story status
+#. Translators: Story status
 #: taiga/projects/translations.py:90
 msgid "Archived"
 msgstr "Archived"
 
-#. Translators: Task status
+#. Translators: Item status
 #. Translators: Issue status
 #: taiga/projects/translations.py:104 taiga/projects/translations.py:120
 msgid "Closed"
 msgstr "Closed"
 
-#. Translators: Task status
+#. Translators: Item status
 #. Translators: Issue status
 #: taiga/projects/translations.py:106 taiga/projects/translations.py:122
 msgid "Needs Info"
