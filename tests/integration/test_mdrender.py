@@ -63,6 +63,6 @@ def test_render_and_extract_mentions_with_capitalized_username():
 
 
 def test_proccessor_valid_email():
-    result = render(dummy_project, "**beta.tester@taiga.io**")
-    expected_result = "<p><strong><a href=\"mailto:beta.tester@taiga.io\" target=\"_blank\">beta.tester@taiga.io</a></strong></p>"
+    result = render(dummy_project, "**beta.tester@threefold.io**")
+    expected_result = "<p><strong><a href=\"mailto:beta.tester@threefold.io\" target=\"_blank\">beta.tester@threefold.io</a></strong></p>"
     assert result == expected_result
