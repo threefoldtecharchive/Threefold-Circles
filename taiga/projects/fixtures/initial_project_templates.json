@@ -125,7 +125,7 @@
                 "name": "Default",
                 "order": 1,
                 "by_default": true,
-                "color": "#9dce0a",
+                "color": "#0973b8",
                 "days_to_due": null
             },
             {
@@ -247,7 +247,7 @@
                 "name": "Default",
                 "order": 1,
                 "by_default": true,
-                "color": "#9dce0a",
+                "color": "#0973b8",
                 "days_to_due": null
             },
             {
@@ -338,7 +338,7 @@
                 "name": "Default",
                 "order": 1,
                 "by_default": true,
-                "color": "#9dce0a",
+                "color": "#0973b8",
                 "days_to_due": null
             },
             {
@@ -766,7 +766,7 @@
                 "name": "Default",
                 "order": 1,
                 "by_default": true,
-                "color": "#9dce0a",
+                "color": "#0973b8",
                 "days_to_due": null
             },
             {
@@ -888,7 +888,7 @@
                 "name": "Default",
                 "order": 1,
                 "by_default": true,
-                "color": "#9dce0a",
+                "color": "#0973b8",
                 "days_to_due": null
             },
             {
@@ -979,7 +979,7 @@
                 "name": "Default",
                 "order": 1,
                 "by_default": true,
-                "color": "#9dce0a",
+                "color": "#0973b8",
                 "days_to_due": null
             },
             {
