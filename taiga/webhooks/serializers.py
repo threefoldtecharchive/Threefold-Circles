@@ -334,7 +334,7 @@ class MilestoneSerializer(serializers.LightSerializer):
 
 
 ########################################################################
-# User Story
+# Story
 ########################################################################
 
 class UserStorySerializer(CustomAttributesValuesWebhookSerializerMixin, serializers.LightSerializer):

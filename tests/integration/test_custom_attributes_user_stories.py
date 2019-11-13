@@ -27,7 +27,7 @@ pytestmark = pytest.mark.django_db
 
 
 #########################################################
-# User Story Custom Attributes
+# Story Custom Attributes
 #########################################################
 
 def test_userstory_custom_attribute_duplicate_name_error_on_create(client):
@@ -82,7 +82,7 @@ def test_userstory_custom_attribute_duplicate_name_error_on_move_between_project
 
 
 #########################################################
-# User Story Custom Attributes Values
+# Story Custom Attributes Values
 #########################################################
 
 def test_userstory_custom_attributes_values_when_create_us(client):

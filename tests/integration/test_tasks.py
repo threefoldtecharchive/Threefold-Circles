@@ -307,7 +307,7 @@ def test_api_create_in_bulk_with_invalid_userstory_2(client):
 
 def test_api_create_invalid_task(client):
     # Associated to a milestone and a user story.
-    # But the User Story is not associated with the milestone
+    # But the Story is not associated with the milestone
     us_milestone = f.MilestoneFactory.create()
     us = f.create_userstory(milestone=us_milestone)
     f.MembershipFactory.create(project=us.project, user=us.owner, is_admin=True)

@@ -139,7 +139,7 @@ def data():
 
 
 #########################################################
-# User Story Custom Attribute
+# Story Custom Attribute
 #########################################################
 
 def test_userstory_custom_attribute_retrieve(client, data):

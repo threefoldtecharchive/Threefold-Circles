@@ -75,7 +75,7 @@ Before contributing with a major change to Taiga it should be discussed first wi
 
 We have defined a concrete workflow for this changes:
 
-1. **User Story**: Send us a complete description of the functionality you'd like to develop, how it should work, for which profiles, as if you were writing a User Story. Please include some ideas of what would be a definition of Done of the User Story. The team will review it, decide whether or not it could make it into Taiga Core. If not, you can always write a plugin.
+1. **Story**: Send us a complete description of the functionality you'd like to develop, how it should work, for which profiles, as if you were writing a Story. Please include some ideas of what would be a definition of Done of the Story. The team will review it, decide whether or not it could make it into Taiga Core. If not, you can always write a plugin.
 2. **Mentorship**: If accepted, Taiga team will help you, and a person from the team will be your contact in the development process. The Story will be visible in the [Taiga Kanban][Taiga Kanban]
 3. **User Experience**: The functionality will require some wireframes or ideas to be developed correctly. A good UX its an essential part of Taiga success. You should create a user experience proposal and the Taiga UX team will help you.
 4. **Design**: The design should respect the Taiga style. Try to reproduce other areas of the site. The taiga design team will review this proposal as well.

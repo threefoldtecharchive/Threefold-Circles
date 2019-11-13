@@ -292,8 +292,8 @@ class UserStoryFactory(Factory):
     ref = factory.Sequence(lambda n: n)
     project = factory.SubFactory("tests.factories.ProjectFactory")
     owner = factory.SubFactory("tests.factories.UserFactory")
-    subject = factory.Sequence(lambda n: "User Story {}".format(n))
-    description = factory.Sequence(lambda n: "User Story {} description".format(n))
+    subject = factory.Sequence(lambda n: "Story {}".format(n))
+    description = factory.Sequence(lambda n: "Story {} description".format(n))
     status = factory.SubFactory("tests.factories.UserStoryStatusFactory")
     milestone = factory.SubFactory("tests.factories.MilestoneFactory")
     tags = factory.Faker("words")
@@ -384,7 +384,7 @@ class UserStoryStatusFactory(Factory):
         model = "projects.UserStoryStatus"
         strategy = factory.CREATE_STRATEGY
 
-    name = factory.Sequence(lambda n: "User Story status {}".format(n))
+    name = factory.Sequence(lambda n: "Story status {}".format(n))
     project = factory.SubFactory("tests.factories.ProjectFactory")
 
 
@@ -393,7 +393,7 @@ class UserStoryDueDateFactory(Factory):
         model = "projects.UserStoryDueDate"
         strategy = factory.CREATE_STRATEGY
 
-    name = factory.Sequence(lambda n: "User Story due date {}".format(n))
+    name = factory.Sequence(lambda n: "Story due date {}".format(n))
     project = factory.SubFactory("tests.factories.ProjectFactory")
 
 

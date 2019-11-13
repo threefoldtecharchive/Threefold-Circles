@@ -527,15 +527,15 @@ msgid "IP Address error"
 msgstr ""
 
 #: taiga/events/events.py:116
-msgid "User story created"
+msgid "Story created"
 msgstr ""
 
 #: taiga/events/events.py:119
-msgid "User story changed"
+msgid "Story changed"
 msgstr ""
 
 #: taiga/events/events.py:122
-msgid "User story deleted"
+msgid "Story deleted"
 msgstr ""
 
 #: taiga/events/events.py:124
@@ -1596,24 +1596,24 @@ msgid "Delete epic"
 msgstr "Delete epic"
 
 #: taiga/permissions/choices.py:47
-msgid "View user story"
-msgstr "View user story"
+msgid "View Story"
+msgstr "View Story"
 
 #: taiga/permissions/choices.py:48
-msgid "Add user story"
-msgstr "Add user story"
+msgid "Add Story"
+msgstr "Add Story"
 
 #: taiga/permissions/choices.py:49
-msgid "Modify user story"
-msgstr "Modify user story"
+msgid "Modify Story"
+msgstr "Modify Story"
 
 #: taiga/permissions/choices.py:50
-msgid "Comment user story"
-msgstr "Comment user story"
+msgid "Comment Story"
+msgstr "Comment Story"
 
 #: taiga/permissions/choices.py:51
-msgid "Delete user story"
-msgstr "Delete user story"
+msgid "Delete Story"
+msgstr "Delete Story"
 
 #: taiga/permissions/choices.py:54
 msgid "Add task"
@@ -1780,7 +1780,7 @@ msgid "The user must be already a project member"
 msgstr "The user must be already a project member"
 
 #: taiga/projects/api.py:662
-msgid "You can't delete user story due date by default"
+msgid "You can't delete Story due date by default"
 msgstr ""
 
 #: taiga/projects/api.py:678
@@ -2048,8 +2048,8 @@ msgstr "epic"
 
 #: taiga/projects/custom_attributes/models.py:121
 #: taiga/projects/tasks/models.py:36 taiga/projects/userstories/models.py:39
-msgid "user story"
-msgstr "user story"
+msgid "Story"
+msgstr "Story"
 
 #: taiga/projects/custom_attributes/models.py:137
 msgid "task"
@@ -3308,35 +3308,35 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"    <h1>User Story updated</h1>\n"
-"    <p>Hello %(user)s, <br> %(changer)s has updated a user story on "
+"    <h1>Story updated</h1>\n"
+"    <p>Hello %(user)s, <br> %(changer)s has updated a story on "
 "%(project)s</p>\n"
-"    <p>User Story #%(ref)s %(subject)s</p>\n"
-"    <a class=\"button\" href=\"%(url)s\" title=\"See User Story #%(ref)s: "
-"%(subject)s in Threefold Circles\">See user story</a>\n"
+"    <p>Story #%(ref)s %(subject)s</p>\n"
+"    <a class=\"button\" href=\"%(url)s\" title=\"See Story #%(ref)s: "
+"%(subject)s in Threefold Circles\">See story</a>\n"
 "    "
 msgstr ""
 "\n"
-"    <h1>User Story updated</h1>\n"
-"    <p>Hello %(user)s, <br> %(changer)s has updated a user story on "
+"    <h1>Story updated</h1>\n"
+"    <p>Hello %(user)s, <br> %(changer)s has updated a story on "
 "%(project)s</p>\n"
-"    <p>User Story #%(ref)s %(subject)s</p>\n"
-"    <a class=\"button\" href=\"%(url)s\" title=\"See User Story #%(ref)s: "
-"%(subject)s in Threefold Circles\">See user story</a>\n"
+"    <p>Story #%(ref)s %(subject)s</p>\n"
+"    <a class=\"button\" href=\"%(url)s\" title=\"See Story #%(ref)s: "
+"%(subject)s in Threefold Circles\">See story</a>\n"
 "    "
 
 #: taiga/projects/notifications/templates/emails/userstories/userstory-change-body-text.jinja:3
 #, python-format
 msgid ""
 "\n"
-"User story updated\n"
-"Hello %(user)s, %(changer)s has updated a user story on %(project)s\n"
-"See user story #%(ref)s %(subject)s at %(url)s\n"
+"story updated\n"
+"Hello %(user)s, %(changer)s has updated a story on %(project)s\n"
+"See story #%(ref)s %(subject)s at %(url)s\n"
 msgstr ""
 "\n"
-"User story updated\n"
-"Hello %(user)s, %(changer)s has updated a user story on %(project)s\n"
-"See user story #%(ref)s %(subject)s at %(url)s\n"
+"Story updated\n"
+"Hello %(user)s, %(changer)s has updated a story on %(project)s\n"
+"See story #%(ref)s %(subject)s at %(url)s\n"
 
 #: taiga/projects/notifications/templates/emails/userstories/userstory-change-subject.jinja:1
 #, python-format
@@ -3351,22 +3351,22 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"    <h1>New user story created</h1>\n"
-"    <p>Hello %(user)s,<br />%(changer)s has created a new user story on "
+"    <h1>New story created</h1>\n"
+"    <p>Hello %(user)s,<br />%(changer)s has created a new story on "
 "%(project)s</p>\n"
-"    <p>User Story #%(ref)s %(subject)s</p>\n"
-"    <a class=\"button\" href=\"%(url)s\" title=\"See User Story #%(ref)s "
-"%(subject)s\">See user story</a>\n"
+"    <p>Story #%(ref)s %(subject)s</p>\n"
+"    <a class=\"button\" href=\"%(url)s\" title=\"See Story #%(ref)s "
+"%(subject)s\">See story</a>\n"
 "    <p><small>The Threefold Circles Team</small></p>\n"
 "    "
 msgstr ""
 "\n"
-"    <h1>New user story created</h1>\n"
-"    <p>Hello %(user)s,<br />%(changer)s has created a new user story on "
+"    <h1>New story created</h1>\n"
+"    <p>Hello %(user)s,<br />%(changer)s has created a new story on "
 "%(project)s</p>\n"
-"    <p>User Story #%(ref)s %(subject)s</p>\n"
-"    <a class=\"button\" href=\"%(url)s\" title=\"See User Story #%(ref)s "
-"%(subject)s\">See user story</a>\n"
+"    <p>Story #%(ref)s %(subject)s</p>\n"
+"    <a class=\"button\" href=\"%(url)s\" title=\"See Story #%(ref)s "
+"%(subject)s\">See story</a>\n"
 "    <p><small>The Threefold Circles Team</small></p>\n"
 "    "
 
@@ -3374,17 +3374,17 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"New user story created\n"
-"Hello %(user)s, %(changer)s has created a new user story on %(project)s\n"
-"See user story #%(ref)s %(subject)s at %(url)s\n"
+"New story created\n"
+"Hello %(user)s, %(changer)s has created a new story on %(project)s\n"
+"See story #%(ref)s %(subject)s at %(url)s\n"
 "\n"
 "---\n"
 "The Threefold Circles Team\n"
 msgstr ""
 "\n"
-"New user story created\n"
-"Hello %(user)s, %(changer)s has created a new user story on %(project)s\n"
-"See user story #%(ref)s %(subject)s at %(url)s\n"
+"New story created\n"
+"Hello %(user)s, %(changer)s has created a new story on %(project)s\n"
+"See story #%(ref)s %(subject)s at %(url)s\n"
 "\n"
 "---\n"
 "The Threefold Circles Team\n"
@@ -3402,18 +3402,18 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"    <h1>User Story deleted</h1>\n"
-"    <p>Hello %(user)s,<br />%(changer)s has deleted a user story on "
+"    <h1>Story deleted</h1>\n"
+"    <p>Hello %(user)s,<br />%(changer)s has deleted a story on "
 "%(project)s</p>\n"
-"    <p>User Story #%(ref)s %(subject)s</p>\n"
+"    <p>Story #%(ref)s %(subject)s</p>\n"
 "    <p><small>The Threefold Circles Team</small></p>\n"
 "    "
 msgstr ""
 "\n"
-"    <h1>User Story deleted</h1>\n"
-"    <p>Hello %(user)s,<br />%(changer)s has deleted a user story on "
+"    <h1>Story deleted</h1>\n"
+"    <p>Hello %(user)s,<br />%(changer)s has deleted a story on "
 "%(project)s</p>\n"
-"    <p>User Story #%(ref)s %(subject)s</p>\n"
+"    <p>Story #%(ref)s %(subject)s</p>\n"
 "    <p><small>The Threefold Circles Team</small></p>\n"
 "    "
 
@@ -3421,17 +3421,17 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"User Story deleted\n"
-"Hello %(user)s, %(changer)s has deleted a user story on %(project)s\n"
-"User Story #%(ref)s %(subject)s\n"
+"Story deleted\n"
+"Hello %(user)s, %(changer)s has deleted a story on %(project)s\n"
+"Story #%(ref)s %(subject)s\n"
 "\n"
 "---\n"
 "The Threefold Circles Team\n"
 msgstr ""
 "\n"
-"User Story deleted\n"
-"Hello %(user)s, %(changer)s has deleted a user story on %(project)s\n"
-"User Story #%(ref)s %(subject)s\n"
+"Story deleted\n"
+"Hello %(user)s, %(changer)s has deleted a story on %(project)s\n"
+"Story #%(ref)s %(subject)s\n"
 "\n"
 "---\n"
 "The Threefold Circles Team\n"
@@ -3762,8 +3762,8 @@ msgid "You don't have permissions to set this sprint to this task."
 msgstr "You don't have permissions to set this sprint to this task."
 
 #: taiga/projects/tasks/api.py:115
-msgid "You don't have permissions to set this user story to this task."
-msgstr "You don't have permissions to set this user story to this task."
+msgid "You don't have permissions to set this story to this task."
+msgstr "You don't have permissions to set this story to this task."
 
 #: taiga/projects/tasks/api.py:118
 msgid "You don't have permissions to set this status to this task."
@@ -3790,16 +3790,16 @@ msgid "Invalid task status id."
 msgstr "Invalid task status id."
 
 #: taiga/projects/tasks/validators.py:85
-msgid "Invalid user story id."
-msgstr "Invalid user story id."
+msgid "Invalid story id."
+msgstr "Invalid story id."
 
 #: taiga/projects/tasks/validators.py:109
 msgid "Invalid task status id. The status must belong to the same project."
 msgstr "Invalid task status id. The status must belong to the same project."
 
 #: taiga/projects/tasks/validators.py:123
-msgid "Invalid user story id. The user story must belong to the same project."
-msgstr "Invalid user story id. The user story must belong to the same project."
+msgid "Invalid story id. The story must belong to the same project."
+msgstr "Invalid story id. The story must belong to the same project."
 
 #: taiga/projects/tasks/validators.py:135
 msgid "Invalid milestone id. The milestone must belong to the same project."
@@ -3808,10 +3808,10 @@ msgstr "Invalid milestone id. The milestone must belong to the same project."
 #: taiga/projects/tasks/validators.py:152
 msgid ""
 "Invalid task ids. All tasks must belong to the same project and, if it "
-"exists, to the same status, user story and/or milestone."
+"exists, to the same status, story and/or milestone."
 msgstr ""
 "Invalid task ids. All tasks must belong to the same project and, if it "
-"exists, to the same status, user story and/or milestone."
+"exists, to the same status, story and/or milestone."
 
 #: taiga/projects/tasks/validators.py:186
 msgid "All the tasks must be from the same project"
@@ -4312,67 +4312,67 @@ msgstr ""
 "process, from definition of a task to its delivery to the customer, is "
 "displayed for participants to see and team members pull work from a queue."
 
-#. Translators: User story point value (value = undefined)
+#. Translators: Story point value (value = undefined)
 #: taiga/projects/translations.py:45
 msgid "?"
 msgstr "?"
 
-#. Translators: User story point value (value = 0)
+#. Translators: Story point value (value = 0)
 #: taiga/projects/translations.py:47
 msgid "0"
 msgstr "0"
 
-#. Translators: User story point value (value = 0.5)
+#. Translators: Story point value (value = 0.5)
 #: taiga/projects/translations.py:49
 msgid "1/2"
 msgstr "1/2"
 
-#. Translators: User story point value (value = 1)
+#. Translators: Story point value (value = 1)
 #: taiga/projects/translations.py:51
 msgid "1"
 msgstr "1"
 
-#. Translators: User story point value (value = 2)
+#. Translators: Story point value (value = 2)
 #: taiga/projects/translations.py:53
 msgid "2"
 msgstr "2"
 
-#. Translators: User story point value (value = 3)
+#. Translators: Story point value (value = 3)
 #: taiga/projects/translations.py:55
 msgid "3"
 msgstr "3"
 
-#. Translators: User story point value (value = 5)
+#. Translators: Story point value (value = 5)
 #: taiga/projects/translations.py:57
 msgid "5"
 msgstr "5"
 
-#. Translators: User story point value (value = 8)
+#. Translators: Story point value (value = 8)
 #: taiga/projects/translations.py:59
 msgid "8"
 msgstr "8"
 
-#. Translators: User story point value (value = 10)
+#. Translators: Story point value (value = 10)
 #: taiga/projects/translations.py:61
 msgid "10"
 msgstr "10"
 
-#. Translators: User story point value (value = 13)
+#. Translators: Story point value (value = 13)
 #: taiga/projects/translations.py:63
 msgid "13"
 msgstr "13"
 
-#. Translators: User story point value (value = 20)
+#. Translators: Story point value (value = 20)
 #: taiga/projects/translations.py:65
 msgid "20"
 msgstr "20"
 
-#. Translators: User story point value (value = 40)
+#. Translators: Story point value (value = 40)
 #: taiga/projects/translations.py:67
 msgid "40"
 msgstr "40"
 
-#. Translators: User story status
+#. Translators: Story status
 #. Translators: Task status
 #. Translators: Issue status
 #: taiga/projects/translations.py:75 taiga/projects/translations.py:98
@@ -4380,12 +4380,12 @@ msgstr "40"
 msgid "New"
 msgstr "New"
 
-#. Translators: User story status
+#. Translators: Story status
 #: taiga/projects/translations.py:78
 msgid "Ready"
 msgstr "Ready"
 
-#. Translators: User story status
+#. Translators: Story status
 #. Translators: Task status
 #. Translators: Issue status
 #: taiga/projects/translations.py:81 taiga/projects/translations.py:100
@@ -4393,7 +4393,7 @@ msgstr "Ready"
 msgid "In progress"
 msgstr "In progress"
 
-#. Translators: User story status
+#. Translators: Story status
 #. Translators: Task status
 #. Translators: Issue status
 #: taiga/projects/translations.py:84 taiga/projects/translations.py:102
@@ -4401,12 +4401,12 @@ msgstr "In progress"
 msgid "Ready for test"
 msgstr "Ready for test"
 
-#. Translators: User story status
+#. Translators: Story status
 #: taiga/projects/translations.py:87
 msgid "Done"
 msgstr "Done"
 
-#. Translators: User story status
+#. Translators: Story status
 #: taiga/projects/translations.py:90
 msgid "Archived"
 msgstr "Archived"
@@ -4515,12 +4515,12 @@ msgid "Stakeholder"
 msgstr "Stakeholder"
 
 #: taiga/projects/userstories/api.py:147
-msgid "You don't have permissions to set this sprint to this user story."
-msgstr "You don't have permissions to set this sprint to this user story."
+msgid "You don't have permissions to set this sprint to this Story."
+msgstr "You don't have permissions to set this sprint to this Story."
 
 #: taiga/projects/userstories/api.py:151
-msgid "You don't have permissions to set this status to this user story."
-msgstr "You don't have permissions to set this status to this user story."
+msgid "You don't have permissions to set this status to this Story."
+msgstr "You don't have permissions to set this status to this Story."
 
 #: taiga/projects/userstories/api.py:246
 #, python-brace-format
@@ -4534,8 +4534,8 @@ msgstr "Invalid points id '{points_id}'"
 
 #: taiga/projects/userstories/api.py:271
 #, python-brace-format
-msgid "Generating the user story #{ref} - {subject}"
-msgstr "Generating the user story #{ref} - {subject}"
+msgid "Generating the Story #{ref} - {subject}"
+msgstr "Generating the Story #{ref} - {subject}"
 
 #: taiga/projects/userstories/models.py:42
 msgid "role"
@@ -4570,15 +4570,15 @@ msgid "generated from task"
 msgstr "generated from task"
 
 #: taiga/projects/userstories/validators.py:43
-msgid "There's no user story with that id"
-msgstr "There's no user story with that id"
+msgid "There's no Story with that id"
+msgstr "There's no Story with that id"
 
 #: taiga/projects/userstories/validators.py:83
 #: taiga/projects/userstories/validators.py:109
 msgid ""
-"Invalid user story status id. The status must belong to the same project."
+"Invalid Story status id. The status must belong to the same project."
 msgstr ""
-"Invalid user story status id. The status must belong to the same project."
+"Invalid Story status id. The status must belong to the same project."
 
 #: taiga/projects/userstories/validators.py:121
 msgid "Invalid milestone id. The milistone must belong to the same project."
@@ -4586,10 +4586,10 @@ msgstr "Invalid milestone id. The milistone must belong to the same project."
 
 #: taiga/projects/userstories/validators.py:134
 msgid ""
-"Invalid user story ids. All stories must belong to the same project and, if "
+"Invalid Story ids. All stories must belong to the same project and, if "
 "it exists, to the same status and milestone."
 msgstr ""
-"Invalid user story ids. All stories must belong to the same project and, if "
+"Invalid Story ids. All stories must belong to the same project and, if "
 "it exists, to the same status and milestone."
 
 #: taiga/projects/validators.py:63
@@ -4625,8 +4625,8 @@ msgid "Default options"
 msgstr "Default options"
 
 #: taiga/projects/validators.py:284
-msgid "User story's statuses"
-msgstr "User story's statuses"
+msgid "Story's statuses"
+msgstr "Story's statuses"
 
 #: taiga/projects/validators.py:285
 msgid "Points"

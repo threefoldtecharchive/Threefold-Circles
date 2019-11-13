@@ -740,7 +740,7 @@ def test_valid_user_story_import_with_custom_attributes_values(client):
 
     url = reverse("importer-us", args=[project.pk])
     data = {
-        "subject": "Test Custom Attrs Values User Story",
+        "subject": "Test Custom Attrs Values Story",
         "custom_attributes_values": {
             custom_attr.name: "test_value"
         }

@@ -125,7 +125,7 @@ models.signals.post_delete.connect(delete_sequence, sender=Project, dispatch_uid
 models.signals.pre_save.connect(store_previous_project, sender=Epic, dispatch_uid="refepic")
 models.signals.post_save.connect(attach_sequence, sender=Epic, dispatch_uid="refepic")
 
-# User Story
+# Story
 models.signals.pre_save.connect(store_previous_project, sender=UserStory, dispatch_uid="refus")
 models.signals.post_save.connect(attach_sequence, sender=UserStory, dispatch_uid="refus")
 

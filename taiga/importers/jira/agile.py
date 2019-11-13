@@ -309,7 +309,7 @@ class JiraAgileImporter(JiraImporterCommon):
                 )
                 take_snapshot(task, comment="", user=None, delete=False)
                 for subtask in issue['fields']['subtasks']:
-                    print("WARNING: Ignoring subtask {} because parent isn't a User Story".format(subtask['key']))
+                    print("WARNING: Ignoring subtask {} because parent isn't a Story".format(subtask['key']))
                 self._import_comments(task, issue, options)
                 self._import_attachments(task, issue, options)
                 self._import_changelog(project, task, issue, options)
@@ -361,7 +361,7 @@ class JiraAgileImporter(JiraImporterCommon):
 
                 take_snapshot(epic, comment="", user=None, delete=False)
                 for subtask in issue['fields']['subtasks']:
-                    print("WARNING: Ignoring subtask {} because parent isn't a User Story".format(subtask['key']))
+                    print("WARNING: Ignoring subtask {} because parent isn't a Story".format(subtask['key']))
                 self._import_comments(epic, issue, options)
                 self._import_attachments(epic, issue, options)
                 issue_with_changelog = self._client.get("/issue/{}".format(issue['key']), {

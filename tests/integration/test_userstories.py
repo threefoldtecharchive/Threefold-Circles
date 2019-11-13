@@ -104,16 +104,16 @@ def create_uss_fixtures():
 
 
 def test_get_userstories_from_bulk():
-    data = "User Story #1\nUser Story #2\n"
+    data = "Story #1\nUser Story #2\n"
     userstories = services.get_userstories_from_bulk(data)
 
     assert len(userstories) == 2
-    assert userstories[0].subject == "User Story #1"
-    assert userstories[1].subject == "User Story #2"
+    assert userstories[0].subject == "Story #1"
+    assert userstories[1].subject == "Story #2"
 
 
 def test_create_userstories_in_bulk():
-    data = "User Story #1\nUser Story #2\n"
+    data = "Story #1\nUser Story #2\n"
     project = f.ProjectFactory.create()
 
     with mock.patch("taiga.projects.userstories.services.db") as db:

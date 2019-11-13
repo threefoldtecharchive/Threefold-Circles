@@ -685,7 +685,7 @@ def test_points_action_bulk_update_order(client, data):
 
 
 #####################################################
-# User Story Status
+# Story Status
 #####################################################
 
 def test_user_story_status_retrieve(client, data):
