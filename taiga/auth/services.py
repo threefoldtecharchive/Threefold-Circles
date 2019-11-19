@@ -182,6 +182,9 @@ def make_auth_response_data(user) -> dict:
     serializer = UserAdminSerializer(user)
     data = dict(serializer.data)
     data["auth_token"] = get_token_for_user(user, "authentication")
+    data["email"] = user.email
+    data["public_key"] = user.public_key
+    data["threebot_name"] = user.threebot_name
     return data
 
 

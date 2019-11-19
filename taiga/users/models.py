@@ -172,7 +172,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     is_system = models.BooleanField(null=False, blank=False, default=False)
 
-
+    public_key = models.CharField(null=False, blank=True, default="", max_length=200, verbose_name=_("Public key"))
+    threebot_name = models.CharField(null=False, blank=True, default="", max_length=100, verbose_name=_("Threebot name"))
+    
     max_private_projects = models.IntegerField(null=True, blank=True,
                                                default=settings.MAX_PRIVATE_PROJECTS_PER_USER,
                                                verbose_name=_("max number of owned private projects"))
@@ -187,6 +189,7 @@ class User(AbstractBaseUser, PermissionsMixin):
                                                           default=settings.MAX_MEMBERSHIPS_PUBLIC_PROJECTS,
                                                           verbose_name=_("max number of memberships for "
                                                                          "each owned public project"))
+    
 
     _cached_memberships = None
     _cached_liked_ids = None

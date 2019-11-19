@@ -165,8 +165,8 @@ LOCALE_PATHS = (
 )
 
 SITES = {
-    "api": {"domain": "localhost:8000", "scheme": "http", "name": "api"},
-    "front": {"domain": "localhost:9001", "scheme": "http", "name": "front"},
+    "api": {"domain": "172.17.0.2:8000", "scheme": "http", "name": "api"},
+    "front": {"domain": "172.17.0.2:9001", "scheme": "http", "name": "front"},
 }
 
 SITE_ID = "api"

@@ -20,6 +20,7 @@ from taiga.projects.models import Membership
 from taiga.users.serializers import UserAdminSerializer
 from taiga.auth.tokens import get_token_for_user
 from taiga.base import response
+from django.db.models import Q
 
 def check_registered(username, email):
     user_model = get_user_model()
@@ -50,7 +51,6 @@ def get_threebot_url(req):
     return JsonResponse({"url": "{0}?{1}".format("https://login.threefold.me", urllib.parse.urlencode(params))})
 
 def callback(req):
-    
     signedhash = req.GET.get("signedhash")
     username = req.GET.get("username")
     data = req.GET.get("data")
@@ -72,33 +72,67 @@ def callback(req):
 
     state = user_pub_key.verify(base64.b64decode(signedhash)).decode()
 
-    # if state != req.session.get("state"):
+    #if state != req.session.get("state"):
     #     return response.BadRequest({"error": "Invalid state. not matching one in user session"})
 
     box = Box(private_key.to_curve25519_private_key(), user_pub_key.to_curve25519_public_key())
-
     try:
         decrypted = box.decrypt(ciphertext, nonce)
         result = json.loads(decrypted)
         email = result["email"]["email"]
         emailVerified = result["email"]["verified"]
-        # if not emailVerified:
-        #     return response.BadRequest({"error": "email not verified"})
+        if not emailVerified:
+             return response.BadRequest({"error": "email not verified"})
 
         user_model = get_user_model()
-        users = user_model.objects.filter(email=email)
-        if len(users) == 0:
-            username = username.replace('.3bot', '')
-            user = user_model(username=username, email=email, full_name=username)
-            user.is_active = True
-            user.save()
+        pk = res.json()["publicKey"]
+        
+        # Link user to 3bot login account
+        if req.user.is_authenticated():
+            user = user_model.objects.filter(id=req.user.id)[0]
+            # user already linked with 3 bot login
+            if user.public_key:
+                # user linking another account
+                if user.public_key != pk:
+                    user.email = email
+                    user.public_key = pk
+                    user.threebot_name = username.replace('.3bot', '')
+                    user.save()
+            else:
+                # user linking their account for first time
+                user.email = email
+                user.public_key = pk
+                user.full_name = username.replace('.3bot', '')
+                user.threebot_name = username.replace('.3bot', '')
+                user.save()
         else:
-            user = users[0]
+            users = user_model.objects.filter(Q(email=email) | Q(public_key=pk))
+            if len(users) == 0:
+                # new user
+                username = username.replace('.3bot', '')
+                user = user_model(username=username, email=email, full_name=username, public_key=pk)
+                user.is_active = True
+                user.threebot_name = username
+                user.save()
+            else:
+                # email or public key exists
+                user = users[0]
+                if user.public_key != pk:
+                    user.public_key = pk
+                    user.threebot_name = username.replace('.3bot', '')
+                    user.save()
+                elif user.email != email:
+                    user.email = email
+                    user.save()
         login(req, user)
     except:
         return response.BadRequest({"error": "error decrypting message"})
     serializer = UserAdminSerializer(user)
+    
     data = dict(serializer.data)
     data["auth_token"] = get_token_for_user(user, "authentication")
+    data['public_key'] = pk
+    data['email'] = email
+    data['threebot_name'] = username.replace('.3bot', '')
     data.pop('roles')
     return JsonResponse(data)
