@@ -21,6 +21,9 @@ from taiga.users.serializers import UserAdminSerializer
 from taiga.auth.tokens import get_token_for_user
 from taiga.base import response
 from django.db.models import Q
+from taiga.auth.backends import Token
+from taiga.base.exceptions import NotAuthenticated
+from django.contrib.auth import login
 
 def check_registered(username, email):
     user_model = get_user_model()
@@ -51,6 +54,14 @@ def get_threebot_url(req):
     return JsonResponse({"url": "{0}?{1}".format("https://login.threefold.me", urllib.parse.urlencode(params))})
 
 def callback(req):
+    t = Token()
+    try:
+        user, _ = t.authenticate(req)
+        if user:
+            login( req, user)
+    except NotAuthenticated:
+        pass
+
     signedhash = req.GET.get("signedhash")
     username = req.GET.get("username")
     data = req.GET.get("data")
