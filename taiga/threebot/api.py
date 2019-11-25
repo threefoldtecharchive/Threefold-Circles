@@ -17,13 +17,15 @@ from django.contrib.auth import login
 from django.http import JsonResponse
 
 from taiga.projects.models import Membership
-from taiga.users.serializers import UserAdminSerializer
+from taiga.users.serializers import UserAdminSerializer, UserSerializer
 from taiga.auth.tokens import get_token_for_user
 from taiga.base import response
 from django.db.models import Q
 from taiga.auth.backends import Token
 from taiga.base.exceptions import NotAuthenticated
 from django.contrib.auth import login
+from taiga.base import exceptions as exc
+from taiga.base.exceptions import ValidationError
 
 def check_registered(username, email):
     user_model = get_user_model()
@@ -67,14 +69,14 @@ def callback(req):
     data = req.GET.get("data")
 
     if signedhash is None or username is None or data is None:
-        raise HTTP_400_BAD_REQUEST()
+        return JsonRespnse({"_error_message": "one or more parameter values were missing (signedhash, username, or data", "_error_type": ""}, status=400)
     data = json.loads(data)
 
     res = requests.get(
         "https://login.threefold.me/api/users/{0}".format(username), {"Content-Type": "application/json"}
     )
     if res.status_code != 200:
-        raise HTTP_400_BAD_REQUEST("Error getting user pub key")
+        return JsonResponse({"_error_message": "Error retrieving public key for user", "_error_type": ""}, status=400)
 
     user_pub_key = nacl.signing.VerifyKey(res.json()["publicKey"], encoder=nacl.encoding.Base64Encoder)
     nonce = base64.b64decode(data["nonce"])
@@ -84,7 +86,7 @@ def callback(req):
     state = user_pub_key.verify(base64.b64decode(signedhash)).decode()
 
     #if state != req.session.get("state"):
-    #     return response.BadRequest({"error": "Invalid state. not matching one in user session"})
+    #    return JsonResponse({"_error_message": "Invalid state", "_error_type": ""}, status=400)
 
     box = Box(private_key.to_curve25519_private_key(), user_pub_key.to_curve25519_public_key())
     try:
@@ -93,14 +95,22 @@ def callback(req):
         email = result["email"]["email"]
         emailVerified = result["email"]["verified"]
         if not emailVerified:
-             return response.BadRequest({"error": "email not verified"})
+            return JsonResponse({"_error_message": "Email not verified", "_error_type": ""}, status=400)     
 
         user_model = get_user_model()
         pk = res.json()["publicKey"]
-        
+       
+        users_with_email = user_model.objects.filter(email=email)
+        if users_with_email:
+            user_with_email = users_with_email[0]
+        else:
+            user_with_email = None
+
         # Link user to 3bot login account
         if req.user.is_authenticated():
             user = user_model.objects.filter(id=req.user.id)[0]
+            if user_with_email and user_with_email.id != req.user.id:
+                return JsonResponse({"_error_message": "Email address is linked with another active account", "_error_type": ""}, status=400)
             # user already linked with 3 bot login
             if user.public_key:
                 # user linking another account
@@ -134,16 +144,16 @@ def callback(req):
                     user.save()
                 elif user.email != email:
                     user.email = email
+                    user.threebot_name = username.replace('.3bot', '')
                     user.save()
         login(req, user)
     except:
-        return response.BadRequest({"error": "error decrypting message"})
+        raise
     serializer = UserAdminSerializer(user)
-    
     data = dict(serializer.data)
     data["auth_token"] = get_token_for_user(user, "authentication")
     data['public_key'] = pk
     data['email'] = email
     data['threebot_name'] = username.replace('.3bot', '')
-    data.pop('roles')
+    data['roles'] = [role for role in data['roles']]
     return JsonResponse(data)
