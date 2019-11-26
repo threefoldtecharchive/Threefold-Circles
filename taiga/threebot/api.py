@@ -63,13 +63,12 @@ def callback(req):
             login( req, user)
     except NotAuthenticated:
         pass
-
     signedhash = req.GET.get("signedhash")
     username = req.GET.get("username")
     data = req.GET.get("data")
 
     if signedhash is None or username is None or data is None:
-        return JsonRespnse({"_error_message": "one or more parameter values were missing (signedhash, username, or data", "_error_type": ""}, status=400)
+        return JsonResponse({"_error_message": "one or more parameter values were missing (signedhash, username, or data", "_error_type": ""}, status=400)
     data = json.loads(data)
 
     res = requests.get(
@@ -123,7 +122,6 @@ def callback(req):
                 # user linking their account for first time
                 user.email = email
                 user.public_key = pk
-                user.full_name = username.replace('.3bot', '')
                 user.threebot_name = username.replace('.3bot', '')
                 user.save()
         else:
