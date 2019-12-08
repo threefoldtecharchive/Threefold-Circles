@@ -47,11 +47,7 @@ class Migration(migrations.Migration):
                                   "view_wiki_pages", "add_wiki_link", "delete_wiki_link", "view_wiki_links",
                                   "comment_us", "comment_task", "comment_issue"]},
                  {"name": "VIEWER", "slug": "viewer", "order": 40, "computable": False,
-                  "permissions": ["add_issue", "modify_issue", "delete_issue", "view_issues", "view_project",
-                                  "add_task", "modify_task", "delete_task", "view_tasks", "modify_us", "view_us",
-                                  "add_wiki_page", "modify_wiki_page", "delete_wiki_page", "view_wiki_pages",
-                                  "add_wiki_link", "delete_wiki_link", "view_wiki_links", "comment_us", "comment_task",
-                                  "comment_issue", "comment_wiki_page"]}]
+                  "permissions": ["view_issues", "view_project", "view_us", "view_tasks", "view_wiki_links", "view_wiki_pages"]}]
 
         if ProjectTemplate.objects.count() > 0:
             ProjectTemplate.objects.update(us_statuses=us_statuses, roles=roles)
@@ -98,12 +94,9 @@ class Migration(migrations.Migration):
 
                 if Role.objects.filter(project_id=pid, slug='viewer').count() == 0:
                     Role(name='VIEWER', computable=False,
-                         permissions=["add_issue", "modify_issue", "delete_issue", "view_issues", "view_project",
-                                      "add_task", "modify_task", "delete_task", "view_tasks", "modify_us", "view_us",
-                                      "add_wiki_page", "modify_wiki_page", "delete_wiki_page", "view_wiki_pages",
-                                      "add_wiki_link", "delete_wiki_link", "view_wiki_links", "comment_us", "comment_task",
-                                      "comment_issue", "comment_wiki_page"], project_id=pid, slug='viewer',
-                         order=40).save()
+                         permissions=["view_issues", "view_project", "view_us", "view_tasks", "view_wiki_links",
+                                      "view_wiki_pages"], project_id=pid, slug='viewer', order=40
+                        ).save()
 
     dependencies = [
         ('users', '0028_auto_20191119_1425'),
