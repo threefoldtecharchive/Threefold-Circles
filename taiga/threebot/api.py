@@ -131,6 +131,7 @@ def callback(req):
                 username = username.replace('.3bot', '')
                 user = user_model(username=username, email=email, full_name=username, public_key=pk)
                 user.is_active = True
+                user.public_key = pk
                 user.threebot_name = username
                 user.save()
             else:
