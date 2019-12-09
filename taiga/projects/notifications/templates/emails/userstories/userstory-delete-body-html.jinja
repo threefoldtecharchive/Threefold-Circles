@@ -3,7 +3,7 @@
 {% block body %}
     {% trans user=user.get_full_name(), changer=changer.get_full_name(), project=project.name, ref=snapshot.ref, subject=snapshot.subject %}
     <h1>Story deleted</h1>
-    <p>Hello {{ user }},<br />{{ changer }} has deleted a user story on {{ project }}</p>
+    <p>Hello {{ user }},<br />{{ changer }} has deleted a story on {{ project }}</p>
     <p>Story #{{ ref }} {{ subject }}</p>
     <p><small>Threefold Team</small></p>
     {% endtrans %}
