@@ -2,7 +2,7 @@
 
 {% block body %}
     {% trans user=user.get_full_name(), changer=changer.get_full_name(), project=project.name, ref=snapshot.ref, subject=snapshot.subject, url=resolve_front_url("task", project.slug, snapshot.ref) %}
-    <h1>New task created</h1>
+    <h1>New item created</h1>
     <p>Hello {{ user }},<br />{{ changer }} has created a new checklist item on {{ project }}</p>
     <p>Item #{{ ref }} {{ subject }}</p>
     <a class="button" href="{{ url }}" title="See Item #{{ ref }} {{ subject }}">See item</a>
