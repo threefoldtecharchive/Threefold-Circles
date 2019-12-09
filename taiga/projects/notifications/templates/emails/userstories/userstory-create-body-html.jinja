@@ -2,7 +2,7 @@
 
 {% block body %}
     {% trans user=user.get_full_name(), changer=changer.get_full_name(), project=project.name, ref=snapshot.ref, subject=snapshot.subject, url=resolve_front_url("userstory", project.slug, snapshot.ref) %}
-    <h1>New user story created</h1>
+    <h1>New story created</h1>
     <p>Hello {{ user }},<br />{{ changer }} has created a new story on {{ project }}</p>
     <p>Story #{{ ref }} {{ subject }}</p>
     <a class="button" href="{{ url }}" title="See Story #{{ ref }} {{ subject }}">See story</a>
