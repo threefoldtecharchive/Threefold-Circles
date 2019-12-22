@@ -462,10 +462,6 @@ msgstr ""
 "                                                    </a>\n"
 "                                                    "
 
-#: taiga/base/templates/emails/hero-body-html.jinja:6
-msgid "You have been Taigatized"
-msgstr "You have been Taigatized"
-
 #: taiga/base/templates/emails/hero-body-html.jinja:359
 msgid ""
 "\n"
