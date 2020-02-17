@@ -27,6 +27,7 @@ from django.contrib.auth import login
 from taiga.base import exceptions as exc
 from taiga.base.exceptions import ValidationError
 
+
 def check_registered(username, email):
     user_model = get_user_model()
     res = user_model.objects.filter(username=username)
@@ -53,52 +54,87 @@ def get_threebot_url(req):
         "publickey": public_key.to_curve25519_public_key().encode(encoder=nacl.encoding.Base64Encoder),
     }
 
-    return JsonResponse({"url": "{0}?{1}".format("https://login.threefold.me", urllib.parse.urlencode(params))})
+    return JsonResponse({"url": "{0}?{1}".format(settings.THREEBOT_URL, urllib.parse.urlencode(params))})
+
 
 def callback(req):
     t = Token()
     try:
         user, _ = t.authenticate(req)
         if user:
-            login( req, user)
+            login(req, user)
     except NotAuthenticated:
         pass
-    signedhash = req.GET.get("signedhash")
-    username = req.GET.get("username")
-    data = req.GET.get("data")
 
-    if signedhash is None or username is None or data is None:
-        return JsonResponse({"_error_message": "one or more parameter values were missing (signedhash, username, or data", "_error_type": ""}, status=400)
+    data = req.GET.get('signedAttempt')
+    if not data:
+        return JsonResponse(
+            {"_error_message": "one or more parameter values were missing (signedAttempt)",
+             "_error_type": ""}, status=400)
+
     data = json.loads(data)
+    username = data['doubleName']
+    if not username:
+        return JsonResponse(
+            {"_error_message": "Bad request, some params are missing",
+             "_error_type": ""}, status=400)
 
-    res = requests.get(
-        "https://login.threefold.me/api/users/{0}".format(username), {"Content-Type": "application/json"}
-    )
+    res = requests.get(settings.THREEBOT_URL + '/api/users/{0}'.format(username),
+                       {'Content-Type': 'application/json'})
+
     if res.status_code != 200:
-        return JsonResponse({"_error_message": "Error retrieving public key for user", "_error_type": ""}, status=400)
+        return JsonResponse(
+            {"_error_message": "Error getting user pub key",
+             "_error_type": ""}, status=400)
 
-    user_pub_key = nacl.signing.VerifyKey(res.json()["publicKey"], encoder=nacl.encoding.Base64Encoder)
-    nonce = base64.b64decode(data["nonce"])
-    ciphertext = base64.b64decode(data["ciphertext"])
+    user_pub_key = nacl.signing.VerifyKey(res.json()['publicKey'], encoder=nacl.encoding.Base64Encoder)
+    pk = res.json()["publicKey"]
+
+    # verify data
+    signedData = data['signedAttempt']
+    if not signedData:
+        return JsonResponse(
+            {"_error_message": "Bad request, some params are missing",
+             "_error_type": ""}, status=400)
+
+    verifiedData = user_pub_key.verify(base64.b64decode(signedData)).decode()
+
+    data = json.loads(verifiedData)
+
+    if not data:
+        return JsonResponse(
+            {"_error_message": "Bad request, some params are missing",
+             "_error_type": ""}, status=400)
+
+    if data['doubleName'] != username:
+        return JsonResponse(
+            {"_error_message": "Bad request, some params are missing",
+             "_error_type": ""}, status=400)
+
+    # verify state
+    state = data['signedState']
+    if not state or state != req.session.get("state"):
+        return JsonResponse({"_error_message": "Invalid state", "_error_type": ""}, status=400)
+
+    nonce = base64.b64decode(data['data']['nonce'])
+    ciphertext = base64.b64decode(data['data']['ciphertext'])
+
     private_key = nacl.signing.SigningKey(settings.PRIVATE_KEY, encoder=nacl.encoding.Base64Encoder)
-
-    state = user_pub_key.verify(base64.b64decode(signedhash)).decode()
-
-    #if state != req.session.get("state"):
-    #    return JsonResponse({"_error_message": "Invalid state", "_error_type": ""}, status=400)
 
     box = Box(private_key.to_curve25519_private_key(), user_pub_key.to_curve25519_public_key())
     try:
         decrypted = box.decrypt(ciphertext, nonce)
         result = json.loads(decrypted)
         email = result["email"]["email"]
-        emailVerified = result["email"]["verified"]
-        if not emailVerified:
-            return JsonResponse({"_error_message": "Email not verified", "_error_type": ""}, status=400)     
+
+        sei = result['email']['sei']
+        res = requests.post(settings.OPEN_KYC_URL, headers={'Content-Type': 'application/json'},
+                            json={'signedEmailIdentifier': sei})
+        if res.status_code != 200:
+            return JsonResponse({"_error_message": "Email not verified", "_error_type": ""}, status=400)
 
         user_model = get_user_model()
-        pk = res.json()["publicKey"]
-       
+
         users_with_email = user_model.objects.filter(email=email)
         if users_with_email:
             user_with_email = users_with_email[0]
