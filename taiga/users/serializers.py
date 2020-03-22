@@ -54,6 +54,8 @@ class UserSerializer(serializers.LightSerializer):
     big_photo = MethodField()
     gravatar_id = MethodField()
     roles = MethodField()
+    public_key = Field()
+    email = Field()
 
     def get_full_name_display(self, obj):
         return obj.get_full_name() if obj else ""
@@ -86,6 +88,7 @@ class UserAdminSerializer(UserSerializer):
     max_public_projects = Field()
     max_memberships_private_projects = Field()
     max_memberships_public_projects = Field()
+    public_key = Field()
 
     def get_total_private_projects(self, user):
         return user.owned_projects.filter(is_private=True).count()
@@ -102,6 +105,8 @@ class UserBasicInfoSerializer(serializers.LightSerializer):
     gravatar_id = MethodField()
     is_active = Field()
     id = Field()
+    public_key = Field()
+    email = Field()
 
     def get_full_name_display(self, obj):
         return obj.get_full_name()

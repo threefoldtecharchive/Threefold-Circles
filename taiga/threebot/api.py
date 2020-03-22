@@ -113,8 +113,8 @@ def callback(req):
 
     # verify state
     state = data['signedState']
-    #if not state or state != req.session.get("state"):
-        #return JsonResponse({"_error_message": "Invalid state", "_error_type": ""}, status=400)
+    if not state or state != req.session.get("state"):
+        return JsonResponse({"_error_message": "Invalid state", "_error_type": ""}, status=400)
 
     nonce = base64.b64decode(data['data']['nonce'])
     ciphertext = base64.b64decode(data['data']['ciphertext'])
