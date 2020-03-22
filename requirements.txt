@@ -5,7 +5,7 @@ asana==0.6.7
 asn1crypto==1.2.0
 attrs==19.3.0
 billiard==3.6.1.0
-bleach==3.1.0
+bleach>=3.1.1
 cairocffi==1.1.0
 cairosvg==2.0.3
 celery==4.3.0
@@ -23,7 +23,7 @@ django-picklefield==0.3.2
 django-sampledatahelper==0.4.1
 django-sites==0.9
 django-sr==0.0.4
-django==1.11.25
+Django>=1.11.28
 djmail==1.0.1
 docopt==0.6.2
 easy-thumbnails==2.4.1
@@ -41,7 +41,7 @@ more-itertools==7.2.0
 netaddr==0.7.19
 oauthlib[signedtoken]==3.1.0
 packbits==0.6
-pillow==6.2.1
+pillow==7.0.0
 premailer==3.0.1
 psd-tools==1.8.27
 psycopg2-binary==2.7.5
