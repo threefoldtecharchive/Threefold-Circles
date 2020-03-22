@@ -23,7 +23,7 @@ django-picklefield==0.3.2
 django-sampledatahelper==0.4.1
 django-sites==0.9
 django-sr==0.0.4
-Django>=1.11.28
+Django==1.11.29
 djmail==1.0.1
 docopt==0.6.2
 easy-thumbnails==2.4.1
