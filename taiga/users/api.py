@@ -91,6 +91,17 @@ class UsersViewSet(ModelCrudViewSet):
                                                                   self.get_queryset(),
                                                                   self)
 
+        if 'publickey' in request.QUERY_PARAMS:
+            publickey = request.QUERY_PARAMS['publickey']
+            self.object_list = self.object_list.filter(public_key=publickey)
+
+        if 'username' in request.QUERY_PARAMS:
+            self.object_list = self.object_list.filter(username=request.QUERY_PARAMS['username'])
+
+        if 'email' in request.QUERY_PARAMS:
+            self.object_list = self.object_list.filter(email=request.QUERY_PARAMS['email'])
+
+
         page = self.paginate_queryset(self.object_list)
         if page is not None:
             serializer = self.get_pagination_serializer(page)
